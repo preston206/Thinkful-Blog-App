@@ -1,0 +1,23 @@
+{
+  "name": "thinkful-blog-app",
+  "version": "1.0.0",
+  "description": "Thinkful.com Blog App - using Mongoose, MongoDB, Node, and deployed to Heroku using mLab",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preston206/Thinkful-Blog-App.git"
+  },
+  "author": "bpr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/preston206/Thinkful-Blog-App/issues"
+  },
+  "homepage": "https://github.com/preston206/Thinkful-Blog-App#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mongoose": "^4.11.5"
+  }
+}
