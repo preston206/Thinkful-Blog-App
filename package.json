@@ -4,6 +4,7 @@
   "description": "Thinkful.com Blog App - using Mongoose, MongoDB, Node, and deployed to Heroku using mLab",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "test"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/preston206/Thinkful-Blog-App#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mongoose": "^4.11.5"
   }
