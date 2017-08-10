@@ -24,7 +24,7 @@ app.get('/posts', (req, res) => {
         // NOTE: "posts" is not arbitrary- it is the actual name of the collection! I spent hours troubleshooting that!
         .then(posts => {
             res.json({
-                Posts: posts.map(
+                posts: posts.map(
                     (post) => post.apiRepr())
             });
         })
@@ -40,7 +40,7 @@ app.get('/posts/:id', (req, res) => {
     Blog
         .findById(req.params.id)
         .exec()
-        .then(posts => res.json(post.apiRepr()))
+        .then(post => res.json(post.apiRepr()))
         .catch(error => {
             console.log(error);
             res.status(500).json({ "error message": 'we encountered an error when attempting to get your data' })

@@ -12,27 +12,20 @@ const blogSchema = mongoose.Schema({
 });
 
 // virtual for full name; NOTE: don't use ES6 arrow here- it will error
-blogSchema.virtual('authorFullName').get(function () {
+blogSchema.virtual('authorFullName').get(function() {
     return `${this.author.firstName} ${this.author.lastName}`.trim();
 });
 
 blogSchema.methods.apiRepr = function () {
     return {
-
+        id: this._id,
         title: this.title,
         content: this.content,
-
-
+        author: this.authorFullName,
+        created: this.created
     };
 };
 
 const Blog = mongoose.model('Blog', blogSchema);
 
 module.exports = { Blog };
-
-
-// id: this._id,
-//     title: this.title,
-//         content: this.content,
-//             author: this.authorFullName,
-//                 created: this.created
