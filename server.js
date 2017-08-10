@@ -29,7 +29,7 @@ app.get('/posts', (req, res) => {
             });
         })
         .catch(error => {
-            console.error(error);
+            console.log(error);
             res.status(500).json({ "error message": "we encountered an error when attempting to get your data" });
         });
 });
