@@ -17,12 +17,12 @@ app.use(bodyParser.json());
 // get blog posts
 app.get('/posts', (req, res) => {
     console.log("getting data; brb");
-    console.log(res)
     Blog
         .find()
         .limit(7)
         .exec()
-        .then(posts => { //NOTE: "posts" is not arbitrary- it is the actual name of the collection! I spent hours troubleshooting that!
+        // NOTE: "posts" is not arbitrary- it is the actual name of the collection! I spent hours troubleshooting that!
+        .then(posts => {
             res.json({
                 Posts: posts.map(
                     (post) => post.apiRepr())
