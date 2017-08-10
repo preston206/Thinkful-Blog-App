@@ -14,19 +14,13 @@ app.use(morgan('common'));
 app.use(bodyParser.json());
 
 
-
-
 // get blog posts
 app.get('/posts', (req, res) => {
     console.log("getting data; brb");
     Blog
-    console.log("find")
         .find()
-        console.log("limit")
         .limit(7)
-        console.log("exec")
         .exec()
-        console.log("then")
         .then(posts => { //NOTE: "posts" is not arbitrary- it is the actual name of the collection! I spent hours troubleshooting that!
             res.json({
                 "Blog Posts": posts.map(post => post.apiRep())
