@@ -17,13 +17,15 @@ app.use(bodyParser.json());
 // get blog posts
 app.get('/posts', (req, res) => {
     console.log("getting data; brb");
+    console.log(res)
     Blog
         .find()
         .limit(7)
         .exec()
         .then(posts => { //NOTE: "posts" is not arbitrary- it is the actual name of the collection! I spent hours troubleshooting that!
             res.json({
-                "Blog Posts": posts.map(post => post.apiRep())
+                Posts: posts.map(
+                    (post) => post.apiRepr())
             });
         })
         .catch(error => {
@@ -38,7 +40,7 @@ app.get('/posts/:id', (req, res) => {
     Blog
         .findById(req.params.id)
         .exec()
-        .then(post => res.json(post.apiRep()))
+        .then(post => res.json(post.apiRepr()))
         .catch(error => {
             console.error(error);
             res.status(500).json({ "error message": 'we encountered an error when attempting to get your data' })
@@ -65,7 +67,7 @@ app.post('/posts', (req, res) => {
             content: req.body.content
         })
         .then(
-        post => res.status(201).json(post.apiRep()))
+        post => res.status(201).json(post.apiRepr()))
         .catch(err => {
             console.error(err);
             res.status(500).json({ message: 'Internal server error' });

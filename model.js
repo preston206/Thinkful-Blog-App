@@ -16,7 +16,7 @@ blogSchema.virtual('authorFullName').get(function() {
     return `${this.author.firstName} ${this.author.lastName}`.trim();
 });
 
-blogSchema.methods.apiRep = function () {
+blogSchema.methods.apiRepr = function () {
     return {
         id: this._id,
         title: this.title,

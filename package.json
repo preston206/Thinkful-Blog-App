@@ -4,7 +4,7 @@
   "description": "Thinkful.com Blog App - using Mongoose, MongoDB, Node, and deployed to Heroku using mLab",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "test": "mocha"
   },
   "repository": {
