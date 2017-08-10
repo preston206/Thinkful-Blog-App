@@ -40,7 +40,7 @@ app.get('/posts/:id', (req, res) => {
     Blog
         .findById(req.params.id)
         .exec()
-        .then(post => res.json(post.apiRepr()))
+        .then(posts => res.json(post.apiRepr()))
         .catch(error => {
             console.log(error);
             res.status(500).json({ "error message": 'we encountered an error when attempting to get your data' })
