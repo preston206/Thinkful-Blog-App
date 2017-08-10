@@ -42,7 +42,7 @@ app.get('/posts/:id', (req, res) => {
         .exec()
         .then(post => res.json(post.apiRepr()))
         .catch(error => {
-            console.error(error);
+            console.log(error);
             res.status(500).json({ "error message": 'we encountered an error when attempting to get your data' })
         });
 });
