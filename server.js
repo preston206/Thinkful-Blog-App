@@ -21,7 +21,7 @@ app.get('/posts', (req, res) => {
     console.log("getting data; brb");
     Blog
         .find()
-        .limit(3)
+        .limit(7)
         .exec()
         .then(posts => { //NOTE: "posts" is not arbitrary- it is the actual name of the collection! I spent hours troubleshooting that!
             res.json({
@@ -49,7 +49,7 @@ app.get('/posts/:id', (req, res) => {
 
 
 // create blog post
-app.post('/posts/', (req, res) => {
+app.post('/posts', (req, res) => {
     const requiredFields = ['title', 'content', 'author'];
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
