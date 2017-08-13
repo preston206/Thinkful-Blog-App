@@ -27,7 +27,7 @@ app.get('/posts', (req, res) => {
                 posts: posts.map(
                     (post) => post.apiRepr())
             });
-                console.log("posts.map");
+                console.log(post);
         })
         .catch(error => {
             console.log(error);
