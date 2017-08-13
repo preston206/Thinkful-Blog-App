@@ -19,7 +19,7 @@ app.get('/posts', (req, res) => {
     console.log("getting data; brb");
     Blog
         .find()
-        .limit(7)
+        // .limit(7)
         .exec()
         // NOTE: "posts" is not arbitrary- it is the actual name of the collection! I spent hours troubleshooting that!
         .then(posts => {
